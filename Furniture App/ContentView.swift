@@ -27,9 +27,14 @@ struct HomeHeader : View{
                 .font(.title)
                 .foregroundColor(.black)
             Spacer()
-            Image(systemName: "bell")
-                .resizable()
-                .frame(width: 32,height: 32)
+            Button{
+                
+            }label: {
+                Image(systemName: "bell")
+                    .resizable()
+                    .frame(width: 32,height: 32)
+                
+            }
         }
     }
 }
@@ -37,10 +42,16 @@ struct HomeHeader : View{
 struct CustomeEditText : View{
     @Binding var search:String
     var body: some View{
-        TextField("Chair,desk,lamp etc",text: $search)
-            .textFieldStyle(.plain)
-            .padding()
-            .border(.gray)
+        HStack{
+            Image(systemName: "magnifyingglass")
+            TextField("Chair,desk,lamp etc",text: $search)
+        }.padding()
+            .cornerRadius(10)
+            .padding(3)
+            .foregroundColor(.black)
+            .overlay(RoundedRectangle(cornerRadius: 10)
+                .stroke(LinearGradient(gradient: Gradient(colors: [.gray, .gray]), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2.5))
+            .shadow(radius: 10)
             
     }
 }
