@@ -33,6 +33,7 @@ struct HomeHeader : View{
                 Image(systemName: "bell")
                     .resizable()
                     .frame(width: 32,height: 32)
+                    .foregroundColor(.orange)
                 
             }
         }
@@ -50,8 +51,9 @@ struct CustomeEditText : View{
             .padding(3)
             .foregroundColor(.black)
             .overlay(RoundedRectangle(cornerRadius: 10)
-                .stroke(LinearGradient(gradient: Gradient(colors: [.gray, .gray]), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2.5))
+                .stroke(LinearGradient(gradient: Gradient(colors: [.gray, .gray]), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 1.0))
             .shadow(radius: 10)
+            .padding(.vertical,20)
             
     }
 }
